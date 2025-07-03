@@ -37,4 +37,32 @@ class AssistantController extends Controller
 
     }
 
+//$id is passed from the url
+    public function edit_assistant(Request $request, $id) {
+        $assistant = Assistant::findOrFail($id);
+        return view('edit_assistant', compact('assistant'));
+    }
+
+
+    public function update_assistant(Request $request, $id) {
+        $validated = $request->validate([
+            'name' => 'required',
+            'partner_companies' => 'required|array',
+            'status' => 'required|boolean',
+        ]);
+
+        Assistant::findOrFail($id)->update($validated);
+        return redirect()->back()->with('success', 'Assistant updated!');
+
+    }
+
+
+
+
+
+    public function select_all() {
+        $assistants = Assistant::all();
+        return view('main', compact('assistants'));
+    }
+
 }
