@@ -33,7 +33,7 @@ class AssistantController extends Controller
 
 
 
-        return redirect()->back()->with('success', 'Assistant created!'); //witrh
+        return redirect()->back()->with('success', 'Assistant created!');
 
     }
 
