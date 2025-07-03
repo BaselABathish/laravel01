@@ -19,14 +19,16 @@ class AssistantController extends Controller
     public function store_assistant(Request $request) {
         $request->validate([
             'name' => 'required',
-            'date_created' => 'required|date',
+            //'date_created' => 'required|date',
             'partner_companies' => 'required|array',
             'status' => 'required|boolean',
         ]);
 
         Assistant::create([
             'name' => $request->name,
-            'date_created' => $request->date_created,
+            //'date_created' => $request->date_created,
+
+            'date_created' => date('Y-m-d'),
             'partner_companies' => json_encode($request->partner_companies),
             'is_active' => $request->is_active
         ]);
@@ -34,8 +36,7 @@ class AssistantController extends Controller
 
 
 
-
-        return redirect()->back()->with('success', 'Assistant created!');
+        return redirect()->back()->with('success', 'Assistant created!'); //witrh
 
     }
 

@@ -56,8 +56,8 @@
     <label for="name">Assistant Name</label>
     <input type="text" name="name" id="name" required>
 
-    <label for="date_created">Date Created</label>
-    <input type="date" name="date_created" id="date_created" required>
+  <!--  <label for="date_created">Date Created</label>
+    <input type="date" name="date_created" id="date_created" required>-->
 
     <label for="partner_companies">Partner Companies</label>
     <select name="partner_companies[]" id="partner_companies" multiple required>
