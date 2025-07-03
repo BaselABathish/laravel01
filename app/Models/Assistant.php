@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Assistant extends Model
 {
-    //
+    //fillable inserts as is
     protected $fillable = [
         'name',
         'date_created',
@@ -14,10 +14,10 @@ class Assistant extends Model
         'status',
     ];
 
-
+//casts converts data type, both are reserved variable names
     protected $casts = [
-        'partner_company_ids' => 'array',
-        'is_active' => 'boolean',
+        'partner_companies' => 'array',
+        'status' => 'boolean',
     ];
 
 }
